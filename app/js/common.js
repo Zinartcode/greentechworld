@@ -38,12 +38,13 @@ $(document).ready(function() {
 
   var formURL = 'https://www.instagram.com/natgeo/?__a=1';
   $.getJSON(formURL, function(api_data) {
-    // console.log(api_data.user.media.nodes[0].display_src);
+    console.log(api_data.graphql.user.edge_owner_to_timeline_media.edges[1]) //.user.media.nodes[0].display_src);
 
     var i = 0;
-    api_data.user.media.nodes.forEach(function(key, value) {
+    api_data.graphql.user.edge_owner_to_timeline_media.edges.forEach(function(key, value) {
       while (i <= 8) {
-        inst_natgeo.innerHTML += "<div class=\"portfolio-item grid\" style=\"background-image: url(" + api_data.user.media.nodes[i].display_src + ")\"><span class=\"a\">" + api_data.user.username + "</span><span style=\"font-size:16px;\" class=\"b\" hidden>" + api_data.user.media.nodes[i].caption + "</span></div>"
+        inst_natgeo.innerHTML += "<div class=\"portfolio-item grid\" style=\"background-image: url(" + api_data.graphql.user.edge_owner_to_timeline_media.edges[i].node.display_url + ")\"><span class=\"a\">" + api_data.graphql.user.full_name + "</span><span style=\"font-size:16px;\" class=\"b\" hidden>" + api_data.graphql.user.edge_owner_to_timeline_media.edges[i].node.edge_media_to_caption
+.edges[0].node.text + "</span></div>"
         // console.log(i);
         i++;
 
@@ -57,17 +58,18 @@ $(document).ready(function() {
       }
     });
   });
-
+1
   // ENGADGET INSTAGRAM
 
-  var formURL = 'https://www.instagram.com/blonde_in_sf/?__a=1';
+  var formURL = 'https://www.instagram.com/leonardodicaprio/?__a=1';
   $.getJSON(formURL, function(api_data) {
     //  console.log(api_data.user.media.nodes[0].display_src);
 
     var i = 0;
-    api_data.user.media.nodes.forEach(function(key, value) {
+    api_data.graphql.user.edge_owner_to_timeline_media.edges.forEach(function(key, value) {
       while (i <= 8) {
-        inst_leo.innerHTML += "<div class=\"portfolio-item grid\" style=\"background-image: url(" + api_data.user.media.nodes[i].display_src + ")\"><span class=\"a\">" + api_data.user.username + "</span><span style=\"font-size:16px;\" class=\"b\" hidden>" + api_data.user.media.nodes[i].caption + "</span></div>"
+        inst_leo.innerHTML += "<div class=\"portfolio-item grid\" style=\"background-image: url(" + api_data.graphql.user.edge_owner_to_timeline_media.edges[i].node.display_url + ")\"><span class=\"a\">" + api_data.graphql.user.full_name + "</span><span style=\"font-size:16px;\" class=\"b\" hidden>" + api_data.graphql.user.edge_owner_to_timeline_media.edges[i].node.edge_media_to_caption
+.edges[0].node.text + "</span></div>"
         // console.log(i);
         i++;
 
