@@ -38,7 +38,7 @@ $(document).ready(function() {
 
   var formURL = 'https://www.instagram.com/natgeo/?__a=1';
   $.getJSON(formURL, function(api_data) {
-    console.log(api_data.graphql.user.edge_owner_to_timeline_media.edges[1]) //.user.media.nodes[0].display_src);
+    // console.log(api_data.graphql.user.edge_owner_to_timeline_media.edges[1]) //.user.media.nodes[0].display_src);
 
     var i = 0;
     api_data.graphql.user.edge_owner_to_timeline_media.edges.forEach(function(key, value) {
