@@ -4,4 +4,4 @@
 *  Used popular APIs such as Instagram, NatGeo, BBC journals 
 *  Optimized development workflow using Gulp, Sass
 
-https://greentechworld.org
+http://greentechworld.org
